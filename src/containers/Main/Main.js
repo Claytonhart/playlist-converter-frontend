@@ -11,6 +11,8 @@ import ConvertedPlaylist from "../ConvertedPlaylist/ConvertedPlaylist";
 import Uploaded from "../Uploaded/Uploaded";
 import NotFound from "../../components/NotFound/NotFound";
 import Playlists from "../Playlists/Playlists";
+import Signup from "../Signup/Signup";
+import Login from "../Login/Login";
 
 const Main = props => (
   <div className="clear-navbar">
@@ -27,6 +29,8 @@ const Main = props => (
       <Route path="/converted" component={ConvertedPlaylist} />
       <Route path="/uploaded" component={Uploaded} />
       <Route path="/playlists" component={Playlists} />
+      <Route path="/signup" component={Signup} />
+      <Route path="/login" component={Login} />
       <Route component={NotFound} />
     </Switch>
   </div>

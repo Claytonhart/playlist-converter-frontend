@@ -10,6 +10,8 @@ import finalPlaylistName from "./finalPlaylistName";
 import finalPlaylistUrl from "./finalPlaylistUrl";
 import initialAccessToken from "./initialAccessToken";
 import topPlaylists from "./topPlaylists";
+import authReducer from "./authReducer";
+import errorsReducer from "./errorsReducer";
 
 const rootReducer = combineReducers({
   playlistNames,
@@ -21,7 +23,9 @@ const rootReducer = combineReducers({
   finalPlaylistName,
   finalPlaylistUrl,
   initialAccessToken,
-  topPlaylists
+  topPlaylists,
+  auth: authReducer,
+  errors: errorsReducer
 });
 
 export default rootReducer;

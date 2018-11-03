@@ -5,9 +5,11 @@
   "homepage": "http://Claytonhart.github.io/playlist-converter",
   "dependencies": {
     "axios": "^0.18.0",
+    "classnames": "^2.2.6",
     "gh-pages": "^1.2.0",
     "jsonp": "^0.2.1",
     "jsonp-promise": "^0.1.2",
+    "jwt-decode": "^2.2.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-google-login": "^3.2.1",

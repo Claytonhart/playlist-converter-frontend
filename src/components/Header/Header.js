@@ -21,7 +21,7 @@ const Header = props => {
             <Link to="/signup">Sign Up</Link>
           </li>
           <li>
-            <Link to="/signup">Log In</Link>
+            <Link to="/login">Log In</Link>
           </li>
         </ul>
       </div>
