@@ -10,6 +10,7 @@ import PlatformAuth from "../PlatformAuth/PlatformAuth";
 import ConvertedPlaylist from "../ConvertedPlaylist/ConvertedPlaylist";
 import Uploaded from "../Uploaded/Uploaded";
 import NotFound from "../../components/NotFound/NotFound";
+import Playlists from "../Playlists/Playlists";
 
 const Main = props => (
   <div className="clear-navbar">
@@ -25,6 +26,7 @@ const Main = props => (
       <Route path="/auth" component={AuthPopup} />
       <Route path="/converted" component={ConvertedPlaylist} />
       <Route path="/uploaded" component={Uploaded} />
+      <Route path="/playlists" component={Playlists} />
       <Route component={NotFound} />
     </Switch>
   </div>

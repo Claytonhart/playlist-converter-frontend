@@ -11,6 +11,9 @@ const Header = props => {
           <Link to="/">Playlist Converter</Link>
         </h2>
         <ul className="main-nav">
+          <li>
+            <Link to="/playlists">Top Playlists</Link>
+          </li>
           <li className="inverted">
             <Link to="/convert">Convert a playlist</Link>
           </li>

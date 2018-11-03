@@ -9,17 +9,19 @@ import failedToParsePlaylist from "./failedToParsePlaylist";
 import finalPlaylistName from "./finalPlaylistName";
 import finalPlaylistUrl from "./finalPlaylistUrl";
 import initialAccessToken from "./initialAccessToken";
+import topPlaylists from "./topPlaylists";
 
 const rootReducer = combineReducers({
-	playlistNames,
-	finalAccessToken,
-	initialPlaylist,
-	finalPlaylist,
-	failedToFindPlaylist,
-	failedToParsePlaylist,
-	finalPlaylistName,
-	finalPlaylistUrl,
-	initialAccessToken
+  playlistNames,
+  finalAccessToken,
+  initialPlaylist,
+  finalPlaylist,
+  failedToFindPlaylist,
+  failedToParsePlaylist,
+  finalPlaylistName,
+  finalPlaylistUrl,
+  initialAccessToken,
+  topPlaylists
 });
 
 export default rootReducer;
