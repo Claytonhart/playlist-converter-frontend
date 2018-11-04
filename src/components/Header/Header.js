@@ -23,7 +23,7 @@ class Header extends Component {
           <Link to="/convert">Convert a playlist</Link>
         </li>
         <li>
-          <Link to="/my-playlists">Your Playlists</Link>
+          <Link to="/your-playlists">Your Playlists</Link>
         </li>
         <li>
           <a href="/" onClick={this.onLogoutClick}>

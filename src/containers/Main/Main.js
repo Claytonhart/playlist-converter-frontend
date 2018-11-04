@@ -10,7 +10,8 @@ import PlatformAuth from "../PlatformAuth/PlatformAuth";
 import ConvertedPlaylist from "../ConvertedPlaylist/ConvertedPlaylist";
 import Uploaded from "../Uploaded/Uploaded";
 import NotFound from "../../components/NotFound/NotFound";
-import Playlists from "../Playlists/Playlists";
+import Playlists from "../Playlists/TopPlaylists";
+import YourPlaylists from "../YourPlaylists/YourPlaylists";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 
@@ -29,6 +30,7 @@ const Main = props => (
       <Route path="/converted" component={ConvertedPlaylist} />
       <Route path="/uploaded" component={Uploaded} />
       <Route path="/playlists" component={Playlists} />
+      <Route path="/your-playlists" component={YourPlaylists} />
       <Route path="/signup" component={Signup} />
       <Route path="/login" component={Login} />
       <Route component={NotFound} />

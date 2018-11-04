@@ -18,7 +18,7 @@ class Playlists extends Component {
       </div>
     ));
     return (
-      <section className="playlists">
+      <section className="top-playlists">
         <h1>PLAYLISTS</h1>
         {this.props.topPlaylists && topPlaylists}
       </section>
