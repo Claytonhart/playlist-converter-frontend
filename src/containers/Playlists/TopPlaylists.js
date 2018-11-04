@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getTopPlaylists } from "../../store/actions/getTopPlaylists";
+import PlaylistItem from "../../components/PlaylistItem/PlaylistItem";
+
+import "./TopPlaylists.css";
 
 class Playlists extends Component {
   componentDidMount() {
@@ -9,13 +12,19 @@ class Playlists extends Component {
 
   render() {
     let topPlaylists = this.props.topPlaylists.map(playlist => (
-      <div className="top-playlist-item" key={playlist._id}>
-        <div className="top-playlist-item__name">Name: {playlist.name}</div>
-        <div className="top-playlist-item__name">
-          Platform: {playlist.platform}
-        </div>
-        <div className="top-playlist-item__name">Link: {playlist.url}</div>
-      </div>
+      <PlaylistItem
+        name={playlist.name}
+        username={playlist.username}
+        platform={playlist.platform}
+        url={playlist.url}
+      />
+      // <div className="top-playlist-item" key={playlist._id}>
+      //   <div className="top-playlist-item__name">Name: {playlist.name}</div>
+      //   <div className="top-playlist-item__name">
+      //     Platform: {playlist.platform}
+      //   </div>
+      //   <div className="top-playlist-item__name">Link: {playlist.url}</div>
+      // </div>
     ));
     return (
       <section className="top-playlists">
