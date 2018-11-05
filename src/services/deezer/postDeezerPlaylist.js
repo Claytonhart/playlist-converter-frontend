@@ -1,18 +1,18 @@
 import axios from "axios";
 
 export async function postDeezerPlaylist(
-	spotifyUriPlaylist,
-	accessToken,
-	playlistUrl
+  spotifyUriPlaylist,
+  accessToken,
+  playlistUrl
 ) {
-	let songValues = spotifyUriPlaylist.map(song => {
-		return song.id;
-	});
+  let songValues = spotifyUriPlaylist.map(song => {
+    return song.id;
+  });
 
-	songValues = songValues.join();
+  songValues = songValues.join();
 
-	const corsAnywhere = `https://cors-anywhere.herokuapp.com/`;
-	const url = `${corsAnywhere}https://api.deezer.com/playlist/${playlistUrl}/tracks&songs=${songValues}&request_method=POST&access_token=${accessToken}`;
+  const corsAnywhere = `http://cors-anywhere.herokuapp.com/`;
+  const url = `${corsAnywhere}http://api.deezer.com/playlist/${playlistUrl}/tracks&songs=${songValues}&request_method=POST&access_token=${accessToken}`;
 
-	await axios.post(url);
+  await axios.post(url);
 }

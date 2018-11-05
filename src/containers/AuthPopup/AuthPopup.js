@@ -15,8 +15,8 @@ class AuthPopup extends Component {
     debugger;
     targetWindow.postMessage(
       { access_token, name: "Spotify" },
-      // "https://claytonhart.github.io/convert/Spotify/Youtube"
-      `https://claytonhart.github.io/playlist-converter/convert/Spotify/Youtube`
+      // "http://localhost:3000/convert/Spotify/Youtube"
+      `http://localhost:3000/playlist-converter/convert/Spotify/Youtube`
     );
 
     window.close();

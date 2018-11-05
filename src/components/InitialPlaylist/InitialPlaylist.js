@@ -20,7 +20,7 @@ class InitialPlaylist extends Component {
     }
 
     // console.log(response);
-    // const url = "https://www.googleapis.com/youtube/v3/search";
+    // const url = "http://www.googleapis.com/youtube/v3/search";
     // const q = "machine gun kelly - 27";
     // const type = "video";
 
@@ -57,9 +57,9 @@ class InitialPlaylist extends Component {
         authButtonToRender = (
           <div onClick={authPlatform}>
             <GoogleLogin
-              // redirectUri="https://claytonhart.github.io/playlist-converter"
+              // redirectUri="http://localhost:3000/playlist-converter"
               clientId="765030499566-0hfptahsbp45p3pj9f5dqlj6ibot8lj6.apps.googleusercontent.com"
-              // scope="https://www.googleapis.com/auth/youtube.force-ssl"
+              // scope="http://www.googleapis.com/auth/youtube.force-ssl"
               onSuccess={this.responseYoutube.bind(this, column)}
               onFailure={this.responseYoutube}
               buttonText={`Authenticate ${playlistName}`}

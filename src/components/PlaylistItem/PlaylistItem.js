@@ -8,7 +8,7 @@ const PlaylistItem = ({ name, username, platform, url }) => {
       <div className="playlist-item__username">{username}</div>
       <div className="playlist-item__platform">{platform}</div>
       <div className="playlist-item__url">
-        <a href={`http://${url}`} target="_blank" rel="noopener">
+        <a href={`https://${url}`} target="_blank" rel="noopener">
           Link
         </a>
       </div>

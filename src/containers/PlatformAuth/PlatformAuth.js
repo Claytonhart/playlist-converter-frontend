@@ -48,14 +48,14 @@ class PlatformAuth extends Component {
     console.log(event.source.location.pathname);
     console.log(name);
     console.log(
-      event.origin === "https://claytonhart.github.io" &&
-        event.source.location.pathname === "/playlist-converter/auth" &&
+      event.origin === "http://localhost:3000" &&
+        event.source.location.pathname === "/auth" &&
         name === "Spotify"
     );
     if (
-      // event.source.location.host === https://claytonhart.github.io
-      event.origin === "https://claytonhart.github.io" &&
-      event.source.location.pathname === "/playlist-converter/auth" &&
+      // event.source.location.host === http://localhost:3000
+      event.origin === "http://localhost:3000" &&
+      event.source.location.pathname === "/auth" &&
       name === "Spotify"
     ) {
       if (this.props.initialPlaylistName === "Spotify") {

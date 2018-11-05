@@ -3,49 +3,49 @@ import axios from "axios";
 import { getSpotifyUserId } from "./getSpotifyUserId";
 
 export async function getSpotifyPlaylist(
-	playlist_id,
-	accessToken,
-	playlistHolder = [],
-	nextSpotifyUrl
+  playlist_id,
+  accessToken,
+  playlistHolder = [],
+  nextSpotifyUrl
 ) {
-	let user_id = await getSpotifyUserId(accessToken);
-	// debugger;
-	const spotifyUrl = `
+  let user_id = await getSpotifyUserId(accessToken);
+  debugger;
+  const spotifyUrl = `
 		https://api.spotify.com/v1/users/${user_id}/playlists/${playlist_id}/tracks`;
 
-	const config = {
-		headers: {
-			Authorization: `Bearer ${accessToken}`
-		}
-	};
+  const config = {
+    headers: {
+      Authorization: `Bearer ${accessToken}`
+    }
+  };
 
-	const response = await axios.get(nextSpotifyUrl || spotifyUrl, config);
-	// debugger;
-	const { data } = response;
-	// debugger;
+  const response = await axios.get(nextSpotifyUrl || spotifyUrl, config);
+  // debugger;
+  const { data } = response;
+  // debugger;
 
-	const { next } = data;
-	const playlist = data.items.map(item => {
-		const artistName = item.track.artists[0].name;
-		let songName = item.track.name;
-		// Spotify returns songnames with cover names in parenthesis,
-		// remove cover names for ease of searching
-		songName = songName.replace(/ *\([^)]*\) */g, "");
+  const { next } = data;
+  const playlist = data.items.map(item => {
+    const artistName = item.track.artists[0].name;
+    let songName = item.track.name;
+    // Spotify returns songnames with cover names in parenthesis,
+    // remove cover names for ease of searching
+    songName = songName.replace(/ *\([^)]*\) */g, "");
 
-		return { artistName, songName };
-	});
-	debugger;
+    return { artistName, songName };
+  });
+  debugger;
 
-	playlistHolder.push(...playlist);
+  playlistHolder.push(...playlist);
 
-	while (next) {
-		return await getSpotifyPlaylist(
-			playlist_id,
-			accessToken,
-			playlistHolder,
-			next
-		);
-	}
+  while (next) {
+    return await getSpotifyPlaylist(
+      playlist_id,
+      accessToken,
+      playlistHolder,
+      next
+    );
+  }
 
-	return playlistHolder;
+  return playlistHolder;
 }

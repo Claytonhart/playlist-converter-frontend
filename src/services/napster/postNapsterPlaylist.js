@@ -1,31 +1,31 @@
 import axios from "axios";
 
 export async function postNapsterPlaylist(
-	napsterUriPlaylist,
-	accessToken,
-	playlistId
+  napsterUriPlaylist,
+  accessToken,
+  playlistId
 ) {
-	debugger;
-	let songValues = napsterUriPlaylist.map(song => {
-		return { id: song.id };
-	});
-	debugger;
+  debugger;
+  let songValues = napsterUriPlaylist.map(song => {
+    return { id: song.id };
+  });
+  debugger;
 
-	// const tracks = {tracks: songValues}
+  // const tracks = {tracks: songValues}
 
-	const url = `https://api.napster.com/v2.2/me/library/playlists/${playlistId}/tracks`;
+  const url = `https://api.napster.com/v2.2/me/library/playlists/${playlistId}/tracks`;
 
-	debugger;
-	const config = {
-		headers: {
-			Authorization: `Bearer ${accessToken}`,
-			"Content-type": `application/json`
-		}
-	};
+  debugger;
+  const config = {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      "Content-type": `application/json`
+    }
+  };
 
-	const body = {
-		tracks: songValues
-	};
+  const body = {
+    tracks: songValues
+  };
 
-	await axios.post(url, JSON.stringify(body), config);
+  await axios.post(url, JSON.stringify(body), config);
 }

@@ -14,7 +14,7 @@ class AuthPopup extends Component {
     console.log(access_token);
     targetWindow.postMessage(
       { access_token, name: "Deezer" },
-      "https://claytonhart.github.io/playlist-converter/convert/Deezer/Youtube"
+      "http://localhost:3000/playlist-converter/convert/Deezer/Youtube"
     );
     debugger;
     window.close();
